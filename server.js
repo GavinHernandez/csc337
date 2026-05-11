@@ -5,6 +5,7 @@
 
 const express = require('express');
 const app = express();
+app.disable('x-powered-by'); // This hides the framework version information
 const port = 3000;
 const fs = require('node:fs');
 const path = require('node:path'); //for submitting reasons leave everything in same folder
