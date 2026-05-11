@@ -179,7 +179,13 @@ app.post('/cart/:action', async (req, res) => {
     const productId = req.body.productId;
     const quantity = req.body.quantity || 1; // Default to 1 if not provided
 
-    console.log(`Action: ${action}, User ID: ${userId}, Product ID: ${productId}, Quantity: ${quantity}`);
+    const logEntry = {
+        message: "Cart action processed",
+        details: { action, userId, productId, quantity },
+        timestamp: new Date()
+    };
+    console.log(logEntry);
+    //console.log(`Action: ${action}, User ID: ${userId}, Product ID: ${productId}, Quantity: ${quantity}`);
 
     //get action
     if (action == "get") {
