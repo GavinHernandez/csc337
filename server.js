@@ -185,7 +185,6 @@ app.post('/cart/:action', async (req, res) => {
         timestamp: new Date()
     };
     console.log(logEntry);
-    //console.log(`Action: ${action}, User ID: ${userId}, Product ID: ${productId}, Quantity: ${quantity}`);
 
     //get action
     if (action == "get") {
