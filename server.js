@@ -6,7 +6,6 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const fs = require('fs');
 const fs = require('node:fs');
 const path = require('node:path'); //for submitting reasons leave everything in same folder
 var bodyParser = require('body-parser');
