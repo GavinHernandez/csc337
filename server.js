@@ -7,8 +7,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const fs = require('fs');
-const path = require('path');
-const root = path.join(__dirname, 'public'); //for submitting reasons leave everything in same folder
+const fs = require('node:fs');
+const path = require('node:path'); //for submitting reasons leave everything in same folder
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(express.urlencoded({ extended: true })); // middleware to parse URL-encoded bodies
@@ -18,7 +18,7 @@ const uri = "mongodb://localhost:27017/"; // MongoDB connection string
 const client = new MongoClient(uri);
 
 //add crypto module for password hashing
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 
 app.use((req, res, next) => {
     const log = {'method': req.method, 'url': req.url, 'time': new Date()};
